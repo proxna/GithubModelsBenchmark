@@ -1,9 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CopilotModelsBenchmark
 {
@@ -13,36 +8,40 @@ namespace CopilotModelsBenchmark
         [Benchmark]
         public void PrimeNumber4o()
         {
+            int sum = 0;
             for (int i = 1; i <= 1000; i++)
             {
-                PrimeNumbers4oMethods.PrimeNumber4o(i);
+                sum += PrimeNumbers4oMethods.PrimeNumber4o(i);
             }
         }
 
         [Benchmark]
         public void PrimeNumberClaude()
         {
+            int sum = 0;
             for (int i = 1; i <= 1000; i++)
             {
-                PrimeNumberClaudeMethods.PrimeNumberClaude(i);
+                sum += PrimeNumberClaudeMethods.PrimeNumberClaude(i);
             }
         }
 
         [Benchmark]
         public void PrimeNumber41()
         {
+            int sum = 0;
             for (int i = 1; i <= 1000; i++)
             {
-                PrimeNumbersGPT41Methods.PrimeNumber41(i);
+                sum += PrimeNumbersGPT41Methods.PrimeNumber41(i);
             }
         }
 
         [Benchmark]
         public void PrimeNumberGemini()
         {
+            long sum = 0;
             for (int i = 1; i <= 1000; i++)
             {
-                PrimeNumbersGeminiMethods.PrimeNumberGemini(i);
+                sum += PrimeNumbersGeminiMethods.PrimeNumberGemini(i);
             }
         }
     }
