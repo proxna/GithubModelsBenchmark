@@ -44,5 +44,35 @@ namespace CopilotModelsBenchmark
                 sum += PrimeNumbersGeminiMethods.PrimeNumberGemini(i);
             }
         }
+
+        [Benchmark]
+        public void PrimeNumberQwen()
+        {
+            long sum = 0;
+            for (int i = 1; i <= 1000; i++)
+            {
+                sum += PrimeNumbersQwenMethods.PrimeNumberQwen(i);
+            }
+        }
+
+        [Benchmark]
+        public void PrimeNumberClaudeFour()
+        {
+            long sum = 0;
+            for (int i = 1; i <= 1000; i++)
+            {
+                sum += PrimeNumbersClaudeFourMethods.PrimeNumberClaudeFour(i);
+            }
+        }
+
+        [Benchmark]
+        public void PrimeNumberGeminiLatest()
+        {
+            long sum = 0;
+            for (int i = 1; i <= 1000; i++)
+            {
+                sum += PrimeNumberGeminiLatestMethods.PrimeNumberGeminiLatest(i);
+            }
+        }
     }
 }
